@@ -24,7 +24,15 @@ class CheckDomainRequest extends FormRequest
     public function rules()
     {
         return [
-            'message' => ['required']
+            'message' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'message.required' => 'Поле "Введите домен" обязательно для заполнения',
+        ];
+    }
+
 }
